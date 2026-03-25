@@ -1,6 +1,6 @@
 # TalentRadar
 
-AI-powered job market analytics dashboard. Paste a job description — get skills, seniority, salary estimates, and market demand analysis powered by Claude.
+AI-powered job market analytics dashboard. Paste a job description — get skills, seniority, salary estimates, and market demand analysis.
 
 ## Architecture
 
