@@ -5,7 +5,7 @@ from functools import lru_cache
 class Settings(BaseSettings):
     database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/talentradar"
     redis_url: str = "redis://localhost:6379/0"
-    anthropic_api_key: str = ""
+    groq_api_key: str = ""
     cache_ttl_seconds: int = 3600
     cors_origins: list[str] = ["http://localhost:3000"]
 

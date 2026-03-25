@@ -1,5 +1,5 @@
 import json
-import anthropic
+from groq import AsyncGroq
 from app.config import get_settings
 from app.schemas import AnalysisResult
 
@@ -31,17 +31,17 @@ Job description:
 
 
 async def analyze_job_description(text: str) -> AnalysisResult:
-    client = anthropic.AsyncAnthropic(api_key=settings.anthropic_api_key)
+    client = AsyncGroq(api_key=settings.groq_api_key)
 
-    message = await client.messages.create(
-        model="claude-sonnet-4-20250514",
+    message = await client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
         max_tokens=2048,
         messages=[
             {"role": "user", "content": ANALYSIS_PROMPT + text}
         ],
     )
 
-    raw = message.content[0].text.strip()
+    raw = message.choices[0].message.content.strip()
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
 
