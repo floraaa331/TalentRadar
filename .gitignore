@@ -1,0 +1,23 @@
+# Environment files
+docker/.env
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+build/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
